@@ -7,7 +7,7 @@ function alterarStatus (id) {
 
    if (statusImagem.classList.contains ("dashboard__item__img--rented")) {
     
-      confirmarDevolucao = prompt ('Deseja realmente devolver o jogo? Digite "Sim".');
+    confirmarDevolucao = prompt ('Deseja realmente devolver o jogo? Digite "Sim".');
     
     if (confirmarDevolucao !== "Sim") {
       return;
