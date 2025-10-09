@@ -12,5 +12,4 @@ function alterarStatus (id) {
     statusBotao.classList.add ("dashboard__item__button--return");
     statusBotao.textContent = "Devolver"; 
    }
-
 } 
