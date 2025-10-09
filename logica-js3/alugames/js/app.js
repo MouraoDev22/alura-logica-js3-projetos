@@ -15,11 +15,17 @@ function alterarStatus (id) {
     
     statusImagem.classList.remove ("dashboard__item__img--rented");
     statusBotao.classList.remove ("dashboard__item__button--return");
-    statusBotao.textContent = "Alugar";  
+    statusBotao.textContent = "Alugar";
+    contador--
+    console.log (`Número de jogos alugados: ${contador}.`);  
    } else {
     statusImagem.classList.add ("dashboard__item__img--rented");
     statusBotao.classList.add ("dashboard__item__button--return");
     statusBotao.textContent = "Devolver";
+    contador++
+    console.log (`Número de jogos alugados: ${contador}.`);
    }
 
 } 
+
+let contador = 0;
