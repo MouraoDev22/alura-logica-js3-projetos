@@ -1,22 +1,16 @@
-function alterarStatus (numero) {
-   let statusAlugado;
-   let statusImagem;
-   
-   statusAlugado = document.getElementById (`btn-alugar${numero}`);
-   statusImagem = document.getElementById (`img${numero}`);
+function alterarStatus (id) {
+   let statusAlugado = document.getElementById (`game-${id}`);
+   let statusImagem = statusAlugado.querySelector (".dashboard__item__img");
+   let statusBotao = statusAlugado.querySelector (".dashboard__item__button");
 
-   if (statusAlugado.classList.contains ("dashboard__item__button")) {
-    statusAlugado.classList.remove ("dashboard__item__button");
-    statusAlugado.classList.add ("dashboard__item__button--return");
-    statusAlugado.textContent = "Devolver";
-    statusImagem.classList.remove ("dashboard__item__img");
-    statusImagem.classList.add ("dashboard__item__img--rented"); 
-   } else {
-    statusAlugado.classList.remove ("dashboard__item__button--return");
-    statusAlugado.classList.add ("dashboard__item__button");
-    statusAlugado.textContent = "Alugar";
+   if (statusImagem.classList.contains ("dashboard__item__img--rented")) {
     statusImagem.classList.remove ("dashboard__item__img--rented");
-    statusImagem.classList.add ("dashboard__item__img");  
-   }  
+    statusBotao.classList.remove ("dashboard__item__button--return");
+    statusBotao.textContent = "Alugar";  
+   } else {
+    statusImagem.classList.add ("dashboard__item__img--rented");
+    statusBotao.classList.add ("dashboard__item__button--return");
+    statusBotao.textContent = "Devolver"; 
+   }
 
-}
+} 
