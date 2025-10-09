@@ -1,4 +1,5 @@
 function alterarStatus (id) {
+   
    let statusAlugado = document.getElementById (`game-${id}`);
    let statusImagem = statusAlugado.querySelector (".dashboard__item__img");
    let statusBotao = statusAlugado.querySelector (".dashboard__item__button");
@@ -12,4 +13,5 @@ function alterarStatus (id) {
     statusBotao.classList.add ("dashboard__item__button--return");
     statusBotao.textContent = "Devolver"; 
    }
+
 } 
