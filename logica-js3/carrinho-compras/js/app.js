@@ -22,5 +22,13 @@ function adicionar () {
 carrinhoTotal.textContent = (`R$${preco}`);
 
 function limpar () {
+ 
+ listaPrecos = [];
+ 
+ carrinhoProdutos = document.getElementById ('lista-produtos');
+ carrinhoProdutos.innerHTML = (`<span class="texto-azul"> </span> <span class="texto-azul"> </span>`);
+ 
+ carrinhoTotal = document.getElementById ('valor-total');
+ carrinhoTotal.textContent = ('R$0');
 
 }
