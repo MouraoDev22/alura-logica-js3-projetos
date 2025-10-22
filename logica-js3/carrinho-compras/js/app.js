@@ -6,6 +6,12 @@ function adicionar () {
  let nomeProduto = produto.split ('-') [0];
  let valorProduto = produto.split ('R$') [1];
  let quantidadeProdutos = document.getElementById ('quantidade').value;
+
+ while ( quantidadeProdutos < 1) {
+    alert ('Selecione pelo menos um item para cada produto desejado.');
+    return;
+ }
+
  let preco = quantidadeProdutos * valorProduto;
  
  let carrinhoProdutos = document.getElementById ('lista-produtos');
@@ -18,8 +24,6 @@ function adicionar () {
  carrinhoTotal.textContent = (`R$${somaPrecos}`);
 
 }
-
-carrinhoTotal.textContent = (`R$${preco}`);
 
 function limpar () {
  
