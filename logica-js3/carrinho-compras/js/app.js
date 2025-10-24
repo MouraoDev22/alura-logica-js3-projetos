@@ -1,7 +1,7 @@
 let listaPrecos = [];
 
 function adicionar () {
- 
+
  let produto = document.getElementById ('produto').value;
  let nomeProduto = produto.split ('-') [0];
  let valorProduto = produto.split ('R$') [1];
