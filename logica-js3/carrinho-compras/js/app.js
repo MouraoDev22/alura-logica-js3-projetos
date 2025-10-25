@@ -7,8 +7,8 @@ function adicionar () {
  let valorProduto = produto.split ('R$') [1];
  let quantidadeProdutos = document.getElementById ('quantidade').value;
 
- while ( quantidadeProdutos < 1) {
-    alert ('Selecione pelo menos um item para cada produto desejado.');
+ if ( quantidadeProdutos < 1) {
+    alert ('Verifique a quantidade de produtos e tente novamente.');
     return;
  }
 
