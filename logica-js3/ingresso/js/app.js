@@ -37,7 +37,7 @@ function comprar () {
        } else {
          quantidadeSuperior = quantidadeSuperior - quantidadeIngresso;
          quantidadeSuperior = document.getElementById ("qtd-superior").textContent = quantidadeSuperior;
-     }
+       }
      
     }
 
