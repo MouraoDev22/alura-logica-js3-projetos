@@ -13,28 +13,25 @@ function comprar () {
 
     if (tipoIngresso == "pista") {
        if (quantidadeIngresso > quantidadePista) {
-        alert ('Quantidade de ingressos encontra-se indisponível')
-        limparCampos ();
-        return;
+        retornar ();
        } else { 
+         alertaCompra ();
          quantidadePista = quantidadePista - quantidadeIngresso;
          quantidadePista = document.getElementById ("qtd-pista").textContent = quantidadePista;
        }
     } else if (tipoIngresso == "inferior") {
        if (quantidadeIngresso > quantidadeInferior) {
-        alert ('Quantidade de ingressos encontra-se indisponível')
-        limparCampos ();
-        return;
+        retornar ();
        } else {
+         alertaCompra ();
          quantidadeInferior = quantidadeInferior - quantidadeIngresso;
          quantidadeInferior = document.getElementById ("qtd-inferior").textContent = quantidadeInferior;
        }
     } else {
      if (quantidadeIngresso > quantidadeSuperior) {
-        alert ('Quantidade de ingressos encontra-se indisponível')
-        limparCampos ();
-        return;
+        retornar ();
        } else {
+         alertaCompra ();
          quantidadeSuperior = quantidadeSuperior - quantidadeIngresso;
          quantidadeSuperior = document.getElementById ("qtd-superior").textContent = quantidadeSuperior;
        }
@@ -49,5 +46,19 @@ function limparCampos () {
     
     tipoIngresso = document.getElementById ("tipo-ingresso").value = "inferior";
     quantidadeIngresso = document.getElementById ("qtd").value = 0;
+
+}
+
+function alertaCompra () {
+
+  alert ('Compra realizada com sucesso!');
+
+}
+
+function retornar () {
+
+  alert ('Quantidade de ingressos encontra-se indisponível')
+  limparCampos ();
+  return;
 
 }
