@@ -6,7 +6,7 @@ function comprar () {
     let quantidadeSuperior = Number (document.getElementById ("qtd-superior").textContent);
     let quantidadeInferior = Number (document.getElementById ("qtd-inferior").textContent);
 
-    if (quantidadeIngresso == 0) {
+    if (quantidadeIngresso <= 0) {
         alert ('Compre pelo menos 1 ingresso.');
         return;
     }
