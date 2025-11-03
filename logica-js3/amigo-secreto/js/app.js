@@ -2,7 +2,7 @@ let listaNomes = [];
 
 function adicionar () {
     
-    if (listaNomes.length == 5) {
+    if (listaNomes.length == 4) {
         alert ('Quantidade máxima de amigos atingida.');
         return;
     }
@@ -26,16 +26,15 @@ function adicionar () {
 
 function sortear () {
     
-    if (listaNomes.length !== 5) {
-        alert ('Insira no total 5 nomes.');
+    if (listaNomes.length !== 4) {
+        alert ('Insira no total 4 nomes.');
         return;
     }
 
-    let nome1 = listaNomes [0];
-    let nome2 = listaNomes [1];
-    let nome3 = listaNomes [2];
-    let nome4 = listaNomes [3];
-    let nome5 = listaNomes [4];
+    let par1 = listaNomes [0];
+    let par2 = listaNomes [1];
+    let par3 = listaNomes [2];
+    let par4 = listaNomes [3];
     
     let listaSorteio = document.getElementById ("lista-sorteio");
 
