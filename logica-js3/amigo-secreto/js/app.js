@@ -7,7 +7,7 @@ function adicionar () {
         return;
     }
     
-    let nomeAmigo = document.getElementById ("nome-amigo").value;
+    let nomeAmigo = document.getElementById ("nome-amigo").value.trim ();
     let ajusteLista = (` ${nomeAmigo}`)
     let listaAmigos = document.getElementById ("lista-amigos");
 
@@ -19,6 +19,8 @@ function adicionar () {
     listaNomes.push (ajusteLista);
     
     listaAmigos.textContent = listaNomes;
+
+    document.getElementById ("nome-amigo").value = '';
 
 }
 
@@ -43,7 +45,6 @@ function sortear () {
 function reiniciar () {
     
     listaNomes = [];
-    listaAmigos = document.getElementById ("lista-amigos");
-    listaAmigos.textContent = '';
+    document.getElementById ("lista-amigos").textContent = '';
 
 }
