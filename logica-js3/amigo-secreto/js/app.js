@@ -11,6 +11,11 @@ function adicionar () {
     let ajusteLista = (` ${nomeAmigo}`)
     let listaAmigos = document.getElementById ("lista-amigos");
 
+    if (nomeAmigo == '') {
+        alert ('Escreva algum nome para adicionar um amigo!');
+        return;
+    }
+
     listaNomes.push (ajusteLista);
     
     listaAmigos.textContent = listaNomes;
