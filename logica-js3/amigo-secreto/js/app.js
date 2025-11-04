@@ -1,4 +1,5 @@
 let listaNomes = [];
+let verificarSorteio = 1;
 
 function adicionar () {
     
@@ -8,7 +9,6 @@ function adicionar () {
     }
     
     let nomeAmigo = document.getElementById ("nome-amigo").value.trim ();
-    let ajusteLista = (` ${nomeAmigo}`)
     let listaAmigos = document.getElementById ("lista-amigos");
 
     if (nomeAmigo == '') {
@@ -16,9 +16,9 @@ function adicionar () {
         return;
     }
 
-    listaNomes.push (ajusteLista);
+    listaNomes.push (nomeAmigo);
     
-    listaAmigos.textContent = listaNomes;
+    listaAmigos.textContent = listaNomes.join (', ');
 
     document.getElementById ("nome-amigo").value = '';
 
@@ -31,19 +31,42 @@ function sortear () {
         return;
     }
 
-    let par1 = listaNomes [0];
-    let par2 = listaNomes [1];
-    let par3 = listaNomes [2];
-    let par4 = listaNomes [3];
+    embaralha (listaNomes);
     
     let listaSorteio = document.getElementById ("lista-sorteio");
-
+        
+    listaSorteio.innerHTML = '';
+        
+    for (let i = 0; i < listaNomes.length; i++) {
+    if (i == listaNomes.length - 1) {
+    listaSorteio.innerHTML = listaSorteio.innerHTML + listaNomes [i] + ' --> ' + listaNomes [0] + '<br>';
+    } else {
+    listaSorteio.innerHTML = listaSorteio.innerHTML + listaNomes [i] + ' --> ' + listaNomes [i + 1] + '<br>';
+    }
+        
+    }
     
 }
 
 function reiniciar () {
     
     listaNomes = [];
+    
     document.getElementById ("lista-amigos").textContent = '';
+    document.getElementById ("lista-sorteio").textContent = '';
+    
+
+}
+
+function embaralha(lista) {
+
+    for (let indice = lista.length; indice; indice--) {
+
+        const indiceAleatorio = Math.floor(Math.random() * indice);
+
+        // atribuição via destructuring
+        [lista[indice - 1], lista[indiceAleatorio]] = 
+            [lista[indiceAleatorio], lista[indice - 1]];
+    }
 
 }
