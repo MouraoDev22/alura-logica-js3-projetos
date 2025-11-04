@@ -1,5 +1,4 @@
 let listaNomes = [];
-let verificarSorteio = 1;
 
 function adicionar () {
     
