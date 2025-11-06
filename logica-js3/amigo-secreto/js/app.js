@@ -16,9 +16,7 @@ function adicionar () {
     }
 
     listaNomes.push (nomeAmigo);
-    
     listaAmigos.textContent = listaNomes.join (', ');
-
     document.getElementById ("nome-amigo").value = '';
 
 }
@@ -31,9 +29,7 @@ function sortear () {
     }
 
     embaralha (listaNomes);
-    
     let listaSorteio = document.getElementById ("lista-sorteio");
-        
     listaSorteio.innerHTML = '';
         
     for (let i = 0; i < listaNomes.length; i++) {
@@ -50,7 +46,6 @@ function sortear () {
 function reiniciar () {
     
     listaNomes = [];
-    
     document.getElementById ("lista-amigos").textContent = '';
     document.getElementById ("lista-sorteio").textContent = '';
     
@@ -61,11 +56,49 @@ function embaralha(lista) {
 
     for (let indice = lista.length; indice; indice--) {
 
-        const indiceAleatorio = Math.floor(Math.random() * indice);
+        const indiceAleatorio = Math.floor (Math.random () * indice);
 
-        // atribuição via destructuring
-        [lista[indice - 1], lista[indiceAleatorio]] = 
-            [lista[indiceAleatorio], lista[indice - 1]];
+        [lista [indice - 1], lista [indiceAleatorio]] = 
+            [lista [indiceAleatorio], lista [indice - 1]];
+    }
+
+}
+
+function excluirAmigo (index) {
+    
+    listaNomes.splice (index, 1);
+    atualizarLista ();
+    atualizarSorteio ();
+
+}
+
+function atualizarSorteio() {
+    
+    let listaSorteio = document.getElementById('lista-sorteio');
+    listaSorteio.innerHTML = '';
+
+}
+
+
+function atualizarLista() {
+    
+    let listaAmigos = document.getElementById ('lista-amigos');
+    listaAmigos.innerHTML = '';
+
+
+    for (let i = 0; i < listaAmigos.length; i++) {
+        // Cria um elemento de parágrafo para cada amigo
+        let paragrafo = document.createElement ('p');
+        paragrafo.textContent = listaNomes [i];
+       
+        // Adiciona um evento de clique para excluir o amigo
+        paragrafo.addEventListener ('click', function () {
+            excluirAmigo (i);
+        });
+
+
+        // Adiciona o parágrafo à lista
+        listaAmigos.appendChild (paragrafo);
     }
 
 }
