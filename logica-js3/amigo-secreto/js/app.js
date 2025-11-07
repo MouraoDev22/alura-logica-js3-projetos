@@ -7,7 +7,7 @@ function adicionar () {
         return;
     }
     
-    let nomeAmigo = document.getElementById ("nome-amigo").value.trim ();
+    let nomeAmigo = document.getElementById ("nome-amigo").value.trim ().toUpperCase ();
     let listaAmigos = document.getElementById ("lista-amigos");
 
     if (listaNomes.includes (nomeAmigo)) {
