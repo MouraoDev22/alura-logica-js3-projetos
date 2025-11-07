@@ -10,6 +10,11 @@ function adicionar () {
     let nomeAmigo = document.getElementById ("nome-amigo").value.trim ();
     let listaAmigos = document.getElementById ("lista-amigos");
 
+    if (listaNomes.includes (nomeAmigo)) {
+        alert ('Nome já adicionado, adicione outro ou um sobrenome.');
+        return;
+    }
+    
     if (nomeAmigo == '') {
         alert ('Escreva algum nome para adicionar um amigo!');
         return;
@@ -60,45 +65,6 @@ function embaralha(lista) {
 
         [lista [indice - 1], lista [indiceAleatorio]] = 
             [lista [indiceAleatorio], lista [indice - 1]];
-    }
-
-}
-
-function excluirAmigo (index) {
-    
-    listaNomes.splice (index, 1);
-    atualizarLista ();
-    atualizarSorteio ();
-
-}
-
-function atualizarSorteio() {
-    
-    let listaSorteio = document.getElementById('lista-sorteio');
-    listaSorteio.innerHTML = '';
-
-}
-
-
-function atualizarLista() {
-    
-    let listaAmigos = document.getElementById ('lista-amigos');
-    listaAmigos.innerHTML = '';
-
-
-    for (let i = 0; i < listaAmigos.length; i++) {
-        // Cria um elemento de parágrafo para cada amigo
-        let paragrafo = document.createElement ('p');
-        paragrafo.textContent = listaNomes [i];
-       
-        // Adiciona um evento de clique para excluir o amigo
-        paragrafo.addEventListener ('click', function () {
-            excluirAmigo (i);
-        });
-
-
-        // Adiciona o parágrafo à lista
-        listaAmigos.appendChild (paragrafo);
     }
 
 }
