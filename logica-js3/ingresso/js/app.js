@@ -1,5 +1,4 @@
 function comprar () {
-    
     let tipoIngresso = document.getElementById ("tipo-ingresso").value;
     let quantidadeIngresso = Number (document.getElementById ("qtd").value);
     let quantidadePista = Number (document.getElementById ("qtd-pista").textContent);
@@ -35,30 +34,22 @@ function comprar () {
          quantidadeSuperior = quantidadeSuperior - quantidadeIngresso;
          quantidadeSuperior = document.getElementById ("qtd-superior").textContent = quantidadeSuperior;
        }
-     
-    }
-
-    limparCampos ();
-
+     }
+    
+     limparCampos ();
 }
 
 function limparCampos () {
-    
     tipoIngresso = document.getElementById ("tipo-ingresso").value = "inferior";
     quantidadeIngresso = document.getElementById ("qtd").value = 0;
-
 }
 
 function alertaCompra () {
-
-  alert ('Compra realizada com sucesso!');
-
+    alert ('Compra realizada com sucesso!');
 }
 
 function retornar () {
-
-  alert ('Quantidade de ingressos encontra-se indisponível')
-  limparCampos ();
-  return;
-
+    alert ('Quantidade de ingressos encontra-se indisponível')
+    limparCampos ();
+    return;
 }

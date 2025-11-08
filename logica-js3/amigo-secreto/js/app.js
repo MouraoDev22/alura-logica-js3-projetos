@@ -1,7 +1,6 @@
 let listaNomes = [];
 
 function adicionar () {
-    
     if (listaNomes.length == 4) {
         alert ('Quantidade máxima de amigos atingida.');
         return;
@@ -23,11 +22,9 @@ function adicionar () {
     listaNomes.push (nomeAmigo);
     listaAmigos.textContent = listaNomes.join (', ');
     document.getElementById ("nome-amigo").value = '';
-
 }
 
 function sortear () {
-    
     if (listaNomes.length !== 4) {
         alert ('Insira no total 4 nomes.');
         return;
@@ -45,20 +42,42 @@ function sortear () {
     }
         
     }
-    
+}
+
+function excluirAmigo (index) {
+    listaNomes.splice (index, 1);
+    atualizarLista ();
+    atualizarSorteio ();
+}
+
+function atualizarSorteio () {
+    let listaSorteio = document.getElementById ("lista-sorteio");
+    listaSorteio.innerHTML = '';
+}
+
+function atualizarLista () {
+    let listaAmigos = document.getElementById ("lista-amigos");
+    listaAmigos.innerHTML = '';
+
+    for (let i = 0; i < listaNomes.length; i++) {
+        let paragrafo = document.createElement ('p');
+        paragrafo.textContent = listaNomes [i];
+       
+        paragrafo.addEventListener ('click', function () {
+            excluirAmigo (i);
+        });
+
+        lista.appendChild (paragrafo);
+    }
 }
 
 function reiniciar () {
-    
     listaNomes = [];
     document.getElementById ("lista-amigos").textContent = '';
     document.getElementById ("lista-sorteio").textContent = '';
-    
-
 }
 
 function embaralha(lista) {
-
     for (let indice = lista.length; indice; indice--) {
 
         const indiceAleatorio = Math.floor (Math.random () * indice);
@@ -66,5 +85,4 @@ function embaralha(lista) {
         [lista [indice - 1], lista [indiceAleatorio]] = 
             [lista [indiceAleatorio], lista [indice - 1]];
     }
-
 }
